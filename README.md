@@ -25,7 +25,7 @@ pip install -r requirements.txt
 3. Launch the Application  
 Once the installation is complete, start the viewer with the following command:  
 
-
+Bash  
 python main.py
 
 
