@@ -12,6 +12,7 @@ Open your terminal, navigate to your preferred directory, and clone this reposit
 
 
 git clone https://github.com/poccii/Faceting-Diagram-viewer.git
+
 cd Faceting-Diagram-viewer
 
 
