@@ -42,6 +42,14 @@ def load_asc(filename):
                 except ValueError:
                     pass
             continue
+        # ★追加: GemCad標準の「数字から始まるギア指定行（例: 96 0.0）」を読み取る
+        elif line[0].isdigit():
+            parts = line.split()
+            try:
+                diagram.index_gear = abs(int(parts[0]))
+            except ValueError:
+                pass
+            continue
 
         if not line.startswith("a"):
             continue
@@ -102,7 +110,6 @@ def load_asc(filename):
         diagram.facets.append(facet)
         facet_id += 1
 
-    # ★修正箇所: 名前に惑わされず、純粋に「角度」で表の振り分けを行う
     p_count, c_count, g_count = 1, 1, 1
     
     for facet in diagram.facets:
